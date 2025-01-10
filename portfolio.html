@@ -35,7 +35,7 @@
 
         <main>
             <div id="portfolio">
-                <h2>Portfolio</h2>
+                <h2>Cleaning & Handyman Portfolio</h2>
                 <div id="viewer">
                     <span onclick="closeViewer(this)" id="closeBtn">
                         <div class="bar">&nbsp;</div>
@@ -54,31 +54,26 @@
                     </div>
                 </div>
                 <div id="overview">
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="0" src="./assets/cleaning.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="1" src="./assets/Josh.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="2" src="./assets/plumbing.jpg" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="3" src="./assets/roof.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="4" src="./assets/hero.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="5" src="./assets/cleaning.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="6" src="./assets/Josh.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="7" src="./assets/plumbing.jpg" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="8" src="./assets/roof.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="9" src="./assets/hero.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="10" src="./assets/cleaning.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="11" src="./assets/Josh.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="12" src="./assets/plumbing.jpg" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="13" src="./assets/roof.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="14" src="./assets/hero.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="15" src="./assets/cleaning.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="16" src="./assets/Josh.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="17" src="./assets/plumbing.jpg" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="18" src="./assets/roof.png" alt=""></div>
-                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="19" src="./assets/hero.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="0" src="./assets/portfolio/IMG_1165.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="1" src="./assets/portfolio/IMG_1169.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="2" src="./assets/portfolio/IMG_1171.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="3" src="./assets/portfolio/IMG_1178.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="4" src="./assets/portfolio/IMG_1272.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="5" src="./assets/portfolio/IMG_1300.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="6" src="./assets/portfolio/IMG_1493.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="7" src="./assets/portfolio/IMG_2119.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="8" src="./assets/portfolio/IMG_2148.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="9" src="./assets/portfolio/IMG_2489.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="10" src="./assets/portfolio/IMG_2505.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="11" src="./assets/portfolio/IMG_2515.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="12" src="./assets/portfolio/IMG_2525.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="13" src="./assets/portfolio/IMG_2579.jpg" alt=""></div>
                 </div>
             </div>
         </main>
         <script>
             function viewImg(imgs) {
+                offsetViewer();
                 let viewedImg = document.getElementById("viewed-img");
                 let imgText = document.getElementById("imgtext");
                 let key = parseInt(imgs.dataset.key);
@@ -128,6 +123,12 @@
                 currentImg.src = prevImg.src;
                 currentImg.dataset.key = prevImg.dataset.key;
             }
+
+            function offsetViewer() {
+                let viewer = document.getElementById("viewer");
+                viewer.style.top = window.pageYOffset + 'px';
+            }
+
         </script>
         <footer>
             <div id="logo">
