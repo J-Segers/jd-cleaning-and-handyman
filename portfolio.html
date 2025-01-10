@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>J&D cleaning and handyman</title>
+        <link rel="stylesheet" href="./portfolio.css" />
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <a href="index.html">
+                    <h1>J&D</h1>
+                </a>
+                <a href="index.html">
+                    <h3>
+                        Cleaning<br>
+                        and<br>
+                        Handyman
+                    </h3>
+                </a>
+            </div>
+            <div id="call-us">
+                <a href="tel:8398001763">
+                    <img src="./assets/telephone.svg" alt="">
+                </a>
+                <div class="text">
+                    <a href="tel:8398001763">
+                        <h3>(830) 800-1763</h3>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="portfolio">
+                <h2>Portfolio</h2>
+                <div id="viewer">
+                    <span onclick="closeViewer(this)" id="closeBtn">
+                        <div class="bar">&nbsp;</div>
+                        <div class="bar">&nbsp;</div>
+                    </span>
+                    <span id="prevBtn" onclick="showPrevImg()">
+                        <div class="bar">&nbsp;</div>
+                        <div class="bar">&nbsp;</div>
+                    </span>
+                    <span id="nextBtn" onclick="showNextImg()">
+                        <div class="bar">&nbsp;</div>
+                        <div class="bar">&nbsp;</div>
+                    </span>
+                    <div id="viewerImgContainer">
+                        <img id="viewed-img" data-key />
+                    </div>
+                </div>
+                <div id="overview">
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="0" src="./assets/cleaning.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="1" src="./assets/Josh.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="2" src="./assets/plumbing.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="3" src="./assets/roof.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="4" src="./assets/hero.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="5" src="./assets/cleaning.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="6" src="./assets/Josh.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="7" src="./assets/plumbing.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="8" src="./assets/roof.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="9" src="./assets/hero.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="10" src="./assets/cleaning.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="11" src="./assets/Josh.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="12" src="./assets/plumbing.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="13" src="./assets/roof.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="14" src="./assets/hero.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="15" src="./assets/cleaning.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="16" src="./assets/Josh.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="17" src="./assets/plumbing.jpg" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="18" src="./assets/roof.png" alt=""></div>
+                    <div class="gallery-img-container"><img onclick="viewImg(this)" data-key="19" src="./assets/hero.png" alt=""></div>
+                </div>
+            </div>
+        </main>
+        <script>
+            function viewImg(imgs) {
+                let viewedImg = document.getElementById("viewed-img");
+                let imgText = document.getElementById("imgtext");
+                let key = parseInt(imgs.dataset.key);
+                viewedImg.src = imgs.src;
+                viewedImg.dataset.key = key;
+                viewedImg.parentElement.parentElement.style.display = "flex";
+                let body = document.querySelector('body');
+                body.style.overflow = "hidden";
+            }
+
+            function closeViewer(el) {
+                let body = document.querySelector('body');
+                body.style.overflow = 'initial';
+                el.parentElement.style.display = 'none'
+            }
+
+            function showNextImg() {
+                let currentImg = document.getElementById("viewed-img");
+                
+                let key = parseInt(currentImg.dataset.key);
+                let searchStr = 'img[data-key="' + ++key + '"]';
+                let nextImg = document.querySelector(searchStr);
+
+                if(!nextImg) {
+                    nextImg = document.querySelector('img[data-key="0"]');
+                }
+
+                currentImg.src = nextImg.src;
+                currentImg.dataset.key = nextImg.dataset.key;
+            }
+
+            function showPrevImg() {
+                let currentImg = document.getElementById("viewed-img");
+                
+                let key = parseInt(currentImg.dataset.key);
+
+                if(key <= 0) {
+                    let list = document.getElementsByClassName('gallery-img-container');
+                    key = list.length - 1;
+                } else {
+                    key--;
+                }
+
+                let searchStr = 'img[data-key="' + key + '"]';
+                let prevImg = document.querySelector(searchStr);
+                
+                currentImg.src = prevImg.src;
+                currentImg.dataset.key = prevImg.dataset.key;
+            }
+        </script>
+        <footer>
+            <div id="logo">
+                <a href="home.html">
+                    <h1>J&D</h1>
+                </a>
+                <a href="home.html">
+                    <h3>
+                        Cleaning<br>
+                        and<br>
+                        Handyman
+                    </h3>
+                </a>
+            </div>
+            <div id="location">
+                <h3>Location</h3>
+                <hr>
+                <p>
+                    5367 state hwy 97e<br>
+                    Floresville Texas  lot C
+                </p>
+            </div>
+            <div id="hours">
+                <h3>Hours</h3>
+                <hr>
+                <div id="hours-info">
+                    <p id="first">
+                        Mon - Fri<br>
+                        Saturday<br>
+                        Sunday 
+                    </p>
+                    <div id="vert-line"></div>
+                    <p id="second">
+                        7am - 6pm<br>
+                        8am - noon<br>
+                        Closed
+                    </p>
+                </div>
+            </div>
+            <div id="questions">
+                <h3>Still have more questions?</h3>
+                <hr>
+                <p>
+                    Contact us by phone or email
+                </p>
+                <div id="links">
+                    <a href="tel:8308001763" id="phone-number">
+                        <div class="link-svg">
+                            <img src="./assets/telephone.svg" alt="">
+                        </div>
+                    </a>
+                    <a href="mailto:Dperalez@gmail.com" id="email">
+                        <div class="link-svg">
+                            <img src="./assets/email.svg" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

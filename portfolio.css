@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900');
+
+:root {
+    --section-color1: #DBFCFF;
+    --section-color2: white;
+    --header-background: rgba(255, 255, 255, .65);
+    --font-color1: rgb(98, 115, 171);
+    --font-color2: white;
+    --section-width: 100%;
+    --phone-filter: invert(45%) sepia(15%) saturate(1289%) hue-rotate(189deg) brightness(96%) contrast(88%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+/* header styling */
+
+header {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    background-color: var(--header-background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    color: var(--font-color1);
+    border-bottom: 2px solid var(--font-color1);
+}
+
+#logo {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    width: auto;
+    
+}
+
+#logo a h1 {
+    font-size: 8.5rem;
+    margin-right: 20px;
+}
+
+#logo a h3 {
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+#call-us {
+    height: 50px;
+    position: relative;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#call-us img {
+    filter: var(--phone-filter);
+    height: 32px;
+    transform: rotate(45deg);
+    position: relative;
+    top: 5px;
+}
+
+#call-us h2 {
+    font-size: 4rem;
+}
+
+#call-us h3 {
+    font-size: 2.5rem;
+}
+
+#logo a:link, #logo a:hover, #logo a:active, #logo a:visited,
+#call-us a:link, #call-us a:hover, #call-us a:active, #call-us a:visited,
+#email:link, #email:hover, #email:active, #email:visited {
+    color: var(--font-color1);
+    text-decoration: none;
+}
+
+
+/* portfolio styling */
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main h2 {
+    font-size: 4rem;
+    color: var(--font-color1);
+    text-align: center;
+    margin: 25px 0;
+}
+
+#portfolio {
+    width: 1296px;
+    height: auto;
+    margin-top: 150px;
+}
+
+#viewer {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#viewer #viewerImgContainer {
+    height: calc(100vh - 300px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#viewerImgContainer img {
+    height: 100%;
+}
+
+#viewer #closeBtn,
+#viewer #nextBtn,
+#viewer #prevBtn {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    border: 2px solid var(--font-color1);
+    background-color: white;
+    border-radius: 100%;
+}
+
+#viewer #closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+#viewer #nextBtn {
+    position: absolute;
+    top: 50vh;
+    right: 15px;
+}
+
+#viewer #prevBtn {
+    position: absolute;
+    top: 50vh;
+    left: 15px;
+}
+
+#prevBtn,
+#nextBtn,
+#closeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#prevBtn {
+    transform: rotate(90deg);
+}
+
+#nextBtn {
+transform: rotate(-90deg);
+}
+
+#prevBtn .bar,
+#nextBtn .bar {
+    position: relative;
+    width: 20px;
+    height: 5px;
+    background-color: var(--font-color1);
+}
+
+#closeBtn .bar {
+    position: relative;
+    width: 30px;
+    height: 5px;
+    background-color: var(--font-color1);
+}
+
+#closeBtn .bar:first-of-type {
+    left: 11px;
+}
+
+#closeBtn .bar:last-of-type {
+    right:12px;
+}
+
+#closeBtn .bar:first-of-type,
+#prevBtn .bar:first-of-type,
+#nextBtn .bar:first-of-type {
+    transform: rotate(45deg);
+    z-index: 102;
+}
+
+#prevBtn .bar:first-of-type,
+#nextBtn .bar:first-of-type {
+    left: 4px;
+    top: 2px
+}
+
+#closeBtn .bar:last-of-type,
+#prevBtn .bar:last-of-type,
+#nextBtn .bar:last-of-type {
+    transform: rotate(-45deg);
+    z-index: 101;
+}
+
+#prevBtn .bar:last-of-type,
+#nextBtn .bar:last-of-type {
+    right: 4px;
+    top: 2px;
+}
+
+#portfolio #overview {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#overview .gallery-img-container {
+    width: 400px;
+    height: 400px;
+    margin: 16px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.gallery-img-container img {
+    width: auto;
+    height: auto;
+}
+
+/* footer styling */
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: lightgray;
+    display: flex;
+    align-items: flex-start;
+    padding: 0 10%;
+    color: var(--font-color1)
+}
+
+footer p {
+    font-size: 1.25rem;
+}
+
+footer > div {
+    margin-top: 50px;
+}
+
+footer > div:not(:first-child) {
+    margin-left: 50px;
+}
+
+footer #logo {
+    margin: auto auto auto 0; 
+}
+
+
+#location {
+    text-align: center;
+}
+
+#hours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#hours-info {
+    display: flex;
+}
+
+#first {
+    text-align: right;
+    margin-right: 5px;
+}
+
+#second {
+    margin-left: 5px;
+}
+
+#questions {
+    text-align: center;
+}
+
+#location hr,
+#hours hr,
+#questions hr {
+    width: 100%;
+    height: 2px;
+    border: none;
+    background-color: var(--font-color1);
+    margin-bottom: 5px;
+}
+
+#vert-line {
+    width: 2px;
+    height: 4.5rem;
+    background-color: var(--font-color1);
+}
+
+#links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-svg {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--font-color1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#phone-number img, #email img {
+    width: 20px;
+    height: 20px;
+    filter: var(--phone-filter)
+}
