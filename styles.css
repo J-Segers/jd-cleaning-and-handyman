@@ -52,20 +52,19 @@ header {
     color: var(--font-color1);
 }
 
-#logo {
+.logo {
     width: 350px;
     display: flex;
     align-items: center;
     width: auto;
-    
 }
 
-#logo a h1 {
+.logo a h1 {
     font-size: 8.5rem;
     margin-right: 20px;
 }
 
-#logo a h3 {
+.logo a h3 {
     font-size: 2rem;
     line-height: 2rem;
 }
@@ -95,7 +94,7 @@ header {
     font-size: 2.5rem;
 }
 
-#logo a:link, #logo a:hover, #logo a:active, #logo a:visited,
+.logo a:link, .logo a:hover, .logo a:active, .logo a:visited,
 #call-us a:link, #call-us a:hover, #call-us a:active, #call-us a:visited,
 #email:link, #email:hover, #email:active, #email:visited {
     color: var(--font-color1);
@@ -369,7 +368,7 @@ footer > div:not(:first-child) {
     margin-left: 50px;
 }
 
-footer #logo {
+footer .logo {
     margin: auto auto auto 0; 
 }
 
@@ -439,4 +438,199 @@ footer #logo {
     width: 20px;
     height: 20px;
     filter: var(--phone-filter)
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        height: 150px;
+        background-color: var(--header-background);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+        color: var(--font-color1);
+        border-bottom: 2px solid var(--font-color1);
+    }
+    
+    .logo a h1 {
+        font-size: 4.25rem;
+        margin-right: 10px;
+    }
+    .logo a h3 {
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    #call-us {
+        height: auto;
+        margin: 0 4px 0 auto;
+    }
+    
+    #call-us img {
+        filter: var(--phone-filter);
+        height: 16px;
+        transform: rotate(45deg);
+        position: relative;
+        top: 2px;
+    }
+    
+    #call-us h2 {
+        font-size: 2rem;
+    }
+    
+    #call-us h3 {
+        font-size: 1.25rem;
+    }
+
+    section:first-of-type {
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    section:first-of-type .img-container {
+        margin: 0 0 25px 0;
+    }
+
+    #hero {
+        margin-bottom: 75px;
+    }
+
+    .space {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    
+    .space img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #pitch {
+        width: 95%;
+    }
+    
+    #pitch h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 25px;
+        line-height: 5.2rem;
+    }
+    
+    #pitch p {
+        width: 100%;
+        font-size: 1rem;
+        text-align: justify;
+    }
+    
+    #pitch .suggest h2 {
+        font-size: 2rem;
+        margin: 0;
+    }
+    
+    #pitch .suggest h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-us {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-us h2:first-of-type {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+    .about-us h2:last-of-type {
+        font-size: 9.25rem;
+        margin: 0;
+    }
+
+    .about-us p {
+        width: 95%;
+        font-size: 1rem;
+    }
+
+    .section-head h2 {
+        font-size: 2rem;
+    }
+
+    li {
+        font-size: 1rem;
+    }
+
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 0;
+        margin-top: 75px;
+    }
+
+    section,
+    #about,
+    #lists,
+    section:last-of-type
+     {
+        flex-direction: column;
+    }
+
+    section:nth-of-type(3) {
+        background-size: auto 100%;
+    }
+
+    #lists {
+        width: auto;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 8px auto 30px 40%;
+    }
+
+    #lists ul,
+    #lists ul:first-of-type {
+        margin: 0;
+    }
+
+    .img-container {
+        height: auto
+    }
+
+    .choose {
+        width: 100%;
+    }
+
+    .choose h2 {
+        font-size: 1.75rem;
+    }
+
+    .choose p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .choose p::before {
+        width: 25px;
+        height: 25px;
+    }
+    
+
+    footer .logo,
+    footer #location,
+    footer #hours,
+    footer #questions {
+        margin: 0 0 32px 0;
+    }
 }
